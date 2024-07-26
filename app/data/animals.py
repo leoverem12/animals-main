@@ -20,19 +20,19 @@ def add_animal(animal: str) -> str:
     return msg
 
 
-def sold_animal(animal: str) -> str:
+def cured_animal(animal: str) -> str:
     animals = open_files.get_animals()
-    sold_animals = open_files.get_cured_animals()
+    cured_animals = open_files.get_cured_animals()
 
     if animal in animals:
         animals.remove(animal)
-        sold_animals.append(animal)
+        cured_animals.append(animal)
 
         with open(list_files.animals, "w", encoding="utf-8") as file:
             json.dump(animals, file)
 
         with open(list_files.cured_animals, "w", encoding="utf-8") as file:
-            json.dump(sold_animals, file)
+            json.dump(cured_animals, file)
 
         msg = f"Тваринка '{animal}' успішно вилікувана."
     else:

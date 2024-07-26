@@ -52,9 +52,9 @@ async def add_animal_action(message: Message, state: FSMContext):
 
 
 @animal_router.callback_query(F.data.startswith("cured_animal"))
-async def sold_animal(call_back: CallbackQuery, state: FSMContext):
+async def cured_animal(call_back: CallbackQuery, state: FSMContext):
     animal = call_back.data.split("_")[-1]
-    msg = animals.sold_animal(animal)
+    msg = animals.cured_animal(animal)
     await call_back.message.answer(text=msg)
 
 
