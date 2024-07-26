@@ -13,9 +13,9 @@ def add_animal(animal: str) -> str:
         with open(list_files.animals, "w", encoding="utf-8") as file:
             json.dump(animal, file)
 
-        msg = f"Товар '{animal}' успішно додано."
+        msg = f"Тварина '{animal}' успішно додано."
     else:
-        msg = f"Товар '{animal}' вже є у списку."
+        msg = f"Тварина '{animal}' вже є у списку."
 
     return msg
 
