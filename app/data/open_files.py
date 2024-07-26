@@ -19,9 +19,9 @@ if not os.path.exists(list_files.reviews):
 
 def get_animals(path: str = list_files.animals) -> list:
     with open(path, "r", encoding="utf-8") as fh:
-        products = json.load(fh)
+        animals = json.load(fh)
 
-    return products
+    return animals
 
 
 def get_cured_animals(path: str = list_files.cured_animals) -> list:
